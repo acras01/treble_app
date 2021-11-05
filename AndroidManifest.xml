@@ -13,9 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
 
-        <service android:name=".EntryService" />
+        <service android:name=".EntryService"  android:exported="true"/>
 
-        <receiver android:name=".Starter">
+        <receiver android:name=".Starter" android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
@@ -25,6 +25,7 @@
         <activity
             android:name=".SettingsActivity"
             android:label="@string/ambient_display_title"
+            android:exported="false"
             android:theme="@style/Theme.TrebleApp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
